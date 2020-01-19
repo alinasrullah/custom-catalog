@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+	<preference for="AlTayerIns\CustomCatalog\Api\EntityRepositoryInterface" type="AlTayerIns\CustomCatalog\Model\EntityRepository"/>
+	<preference for="AlTayerIns\CustomCatalog\Api\Data\EntityInterface" type="AlTayerIns\CustomCatalog\Model\Data\Entity"/>
+	<preference for="AlTayerIns\CustomCatalog\Api\Data\EntitySearchResultsInterface" type="Magento\Framework\Api\SearchResults"/>
+	<virtualType name="AlTayerIns\CustomCatalog\Model\ResourceModel\Entity\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+		<arguments>
+			<argument name="mainTable" xsi:type="string">altayerins_customcatalog_entity</argument>
+			<argument name="resourceModel" xsi:type="string">AlTayerIns\CustomCatalog\Model\ResourceModel\Entity\Collection</argument>
+		</arguments>
+	</virtualType>
+	<type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+		<arguments>
+			<argument name="collections" xsi:type="array">
+				<item name="altayerins_customcatalog_entity_listing_data_source" xsi:type="string">AlTayerIns\CustomCatalog\Model\ResourceModel\Entity\Grid\Collection</item>
+			</argument>
+		</arguments>
+	</type>
+</config>

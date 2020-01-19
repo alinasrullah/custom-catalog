@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework-message-queue:etc/topology.xsd">
+    <exchange name="altayer.product" type="topic" connection="amqp">
+        <binding id="AltayerProductUpdate" topic="altayer.product.update" destinationType="queue" destination="altayer_product_update"/>
+    </exchange>
+</config>
